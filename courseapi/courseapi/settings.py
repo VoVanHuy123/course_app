@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'rest_framework',
     'drf_yasg',
-    'cloudinary'
+    'cloudinary',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +101,16 @@ cloudinary.config(
     api_secret = "kQugdU7BMnVH5E4OYtFLvGKrHfk", # Click 'View API Keys' above to copy your API secret
     secure=True
 )
+
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
+}
+# OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
+
+CLIENT_ID = 'yhYn7PNc3gATXT9bCW8KGYoGETslCR30uvoOAqbb'
+CLIENT_SECRET = 'V2cW5duQqpGMUtRALf4DgiDDa2msqcxuUUCGqZJpBPYage36ana04wokltxuDP01ZIBAK1JM1mH5ko6N0ZyZJdLun1YXZQpyPBxChKicJ0ruSYDLkqwNS5xptEvBdtwx'
 # ////////////
 
 # kết nối database

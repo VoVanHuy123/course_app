@@ -54,15 +54,17 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 class Interaction(BaseModel):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name='comments')
-    lesson = models.ForeignKey("Lesson", on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey("User", on_delete=models.CASCADE)
+    lesson = models.ForeignKey("Lesson", on_delete=models.CASCADE)
+    class Meta:
+        abstract = True;
 
 class Comment(Interaction):
     content = models.TextField()
 
 class Like(Interaction):
     class Meta:
-        unique_together = ('lesson', 'user')
+        unique_together = ('user', 'lesson')
 
 
 

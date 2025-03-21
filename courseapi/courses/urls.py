@@ -9,6 +9,8 @@ routes.register('categories', views.CategoryViewset, basename='category')
 routes.register('courses', views.CourseViewset, basename='course')
 routes.register('lessons', views.LessonViewset, basename='lesson')
 routes.register('users', views.UserViewSet, basename='user')
+routes.register('comments',views.CommentViewSet, basename='comment')
+
 
 urlpatterns = [
     path('', include(routes.urls)),
