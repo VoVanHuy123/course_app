@@ -104,7 +104,6 @@ cloudinary.config(
 
 
 REST_FRAMEWORK = {
-
     'DEFAULT_AUTHENTICATION_CLASSES': ('oauth2_provider.contrib.rest_framework.OAuth2Authentication',)
 }
 # OAUTH2_PROVIDER = { 'OAUTH2_BACKEND_CLASS': 'oauth2_provider.oauth2_backends.JSONOAuthLibCore' }
@@ -119,8 +118,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'coursedb',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '' # mặc định localhost
+            'PASSWORD': '442161',
+            'HOST': '',
     }
 }
 
