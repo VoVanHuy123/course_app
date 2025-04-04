@@ -57,7 +57,7 @@ class Interaction(BaseModel):
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     lesson = models.ForeignKey("Lesson", on_delete=models.CASCADE)
     class Meta:
-        abstract = True;
+        abstract = True
 
 class Comment(Interaction):
     content = models.TextField()
